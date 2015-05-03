@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<display-name>Edams</display-name>
+	
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+	
+	<security-constraint>
+		<display-name>JSP Protection</display-name>
+		<web-resource-collection>
+			<web-resource-name>SecureJSPPages</web-resource-name>
+			<url-pattern>*.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>nobody</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<security-role>
+		<description>JSP 접근 제한</description>
+		<role-name>nobody</role-name>
+	</security-role>
+	
+	<!-- 최초 설치 : http://url/install && setup -->
+	<servlet>
+		<servlet-name>System</servlet-name>
+		<servlet-class>edams.system.SystemInit</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>System</servlet-name>
+		<url-pattern>/Init</url-pattern>
+		<url-pattern>/Install</url-pattern>
+		<url-pattern>/Setup</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 도메인 최 상단 경로 페이지를 조회하는 서블릿 -->
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>edams.view.View</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/View/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Files</servlet-name>
+		<servlet-class>edams.view.Files</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Files</servlet-name>
+		<url-pattern>/Files/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Dashboard</servlet-name>
+		<servlet-class>edams.view.Dashboard</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Dashboard</servlet-name>
+		<url-pattern>/Dashboard/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Admin</servlet-name>
+		<servlet-class>edams.view.Admin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Admin</servlet-name>
+		<url-pattern>/Admin/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 엘라스틱서치 연결 서블릿 -->
+	<servlet>
+		<servlet-name>Elasticsearch</servlet-name>
+		<servlet-class>edams.view.Elasticsearch</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Elasticsearch</servlet-name>
+		<url-pattern>/Elasticsearch/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 입력된 폼을 처리하는 서블릿 -->
+	<servlet>
+		<servlet-name>AcConfirm</servlet-name>
+		<servlet-class>edams.model.AcConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AcConfirm</servlet-name>
+		<url-pattern>/AcConfirm/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PrjConfirm</servlet-name>
+		<servlet-class>edams.model.PrjConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PrjConfirm</servlet-name>
+		<url-pattern>/PrjConfirm/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FileConfirm</servlet-name>
+		<servlet-class>edams.model.FileConfirm</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileConfirm</servlet-name>
+		<url-pattern>/FileConfirm/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 사용자 로그인 서블릿 -->
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>edams.view.Account</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login/*</url-pattern>
+		<url-pattern>/Signin/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Ajax 서블릿. -->
+	<servlet>
+		<servlet-name>Ajax</servlet-name>
+		<servlet-class>edams.ajax.Ajax</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Ajax</servlet-name>
+		<url-pattern>/Ajax/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 엘라스틱서치 연결 서블릿 -->
+	<servlet>
+		<servlet-name>EsPipe</servlet-name>
+		<servlet-class>edams.es.EsReq</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EsPipe</servlet-name>
+		<url-pattern>/Es/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 키바나 서블릿 -->
+	<servlet>
+		<servlet-name>configJs</servlet-name>
+		<servlet-class>edams.kibana.ConfigJs</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>configJs</servlet-name>
+		<url-pattern>/kibana/config.js</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 파일 업로드 -->
+	<servlet>
+		<servlet-name>FileUpload</servlet-name>
+		<servlet-class>edams.file.FileUpload</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileUpload</servlet-name>
+		<url-pattern>/FileUpload</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

@@ -1,0 +1,78 @@
+* {font-family:'Nanum Barun Gothic';}
+.text-red {color:red}
+.text-blue {color:blue}
+.text-green {color:green}
+.text-white {color:#FFFFFF }
+.text-navtext {color:#777 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 80px;
+}
+.body-gray {
+	background-color: #eee;
+}
+.footer {
+  position: absolute;
+  padding: 6px;
+  font-size: 11px;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 65px;
+  background-color: #222;
+  color: #eee;
+}
+.footer a{
+	color: #529BDA;
+}
+.footer a:ACTIVE, .footer a:HOVER {
+	color: #F00;
+}
+.navbar {
+    border-radius: 0px;
+}
+blockquote {
+    font-size: 15px;
+    color: #999;
+    padding: 5px 10px;
+	margin: 0px 0px 15px;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+    vertical-align: middle;
+    padding: 3px; 
+}
+.btn-default .badge {
+	background-color: red;
+}
+.badge {
+	padding: 2px 5px;
+	font-size: 10px;
+}
+
+.jm-badge {
+   position:relative;
+}
+.jm-badge[data-badge]:after {
+   content:attr(data-badge);
+   position:absolute;
+   top:-3px;
+   right:-3px;
+   font-size: 9px;
+   background:red;
+   color:white;
+   width:15px;height:15px;
+   text-align:center;
+   line-height:16px;
+   border-radius:4px;
+   box-shadow:1px 1px 1px #111;
+}
+
+.modal-dialog.shreply {
+	width: 400px;
+	margin: 90px auto;
+}

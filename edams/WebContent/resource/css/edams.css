@@ -1,0 +1,17 @@
+.panel-container{
+	margin-top: 10px;
+}
+#kibanaFrame{
+	border-width: 0px;
+	border-style: none;
+}
+.progress-sm {
+	height: 8px;
+	margin-bottom: 0px;
+}
+/*
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: #EEE;
+	border-color: #DDD; 
+}
+*/
